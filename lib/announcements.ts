@@ -1,7 +1,9 @@
 import { createClient } from "./supabase/server";
 import { Announcement } from "./types";
+import { unstable_noStore as noStore } from "next/cache";
 
 export async function getAnnouncements(): Promise<Announcement[]> {
+  noStore();
   const supabase = await createClient();
   if (!supabase) return [];
   const today = new Date().toISOString();

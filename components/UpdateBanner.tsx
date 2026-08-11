@@ -1,0 +1,23 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Announcement } from "@/lib/types";
+import { useLanguage } from "./LanguageProvider";
+
+export default function UpdateBanner({ announcement }: { announcement?: Announcement }) {
+  const { locale } = useLanguage();
+  const pathname = usePathname();
+
+  if (!announcement || pathname.startsWith("/admin")) return null;
+
+  const title = locale === "en" && announcement.title_en
+    ? announcement.title_en
+    : announcement.title_de;
+
+  return <aside className={`update-banner ${announcement.important ? "important" : ""}`}>
+    <span className="update-banner-label">{locale === "de" ? "Aktuelles" : "Update"}</span>
+    <span>{title}</span>
+    <Link href="/aktuelles">{locale === "de" ? "Mehr erfahren" : "Learn more"} →</Link>
+  </aside>;
+}
