@@ -41,6 +41,11 @@
   .footer-logo img{width:230px;height:70px}
   .footer-links{grid-template-columns:1fr 1fr;gap:32px}
   .copyright{margin-top:32px;gap:8px}
+  .contact-card{grid-template-columns:1fr;gap:18px;padding:22px 20px}
+  .contact-card-actions{justify-content:stretch}
+  .contact-card-actions .button{width:100%;justify-content:center}
+  .legal-grid{grid-template-columns:1fr;gap:20px}
+  .legal-card{padding:22px 20px}
 }
 @media(max-width:600px){.update-banner{align-items:flex-start;gap:7px;flex-wrap:wrap;padding:10px 16px}.update-banner-label{width:100%}}
-@media(max-width:600px){.section{padding:62px 0}}
+@media(max-width:600px){.section{padding:62px 0}.hero .lead{margin:18px 0}.service{padding:30px 0}.section-head{margin-bottom:24px;padding-top:6px}.button{width:auto}.hero-copy{padding:58px 22px 42px}.hero-image{min-height:420px}}
