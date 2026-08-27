@@ -81,6 +81,16 @@ export function ContactPage(){const{locale}=useLanguage();const copy = locale ==
   phone: "0173 4004408",
   email: siteConfig.email,
   button: "E-Mail schreiben",
+  hoursTitle: "Sprechzeiten",
+  hours: "Montag bis Freitag, 8:30–14:00 Uhr",
+  webLabel: "Web",
+  web: "www.hebamme-se.de",
+  availability: "Während der Sprechzeiten ist eine Kontaktaufnahme telefonisch oder per E-Mail möglich. Da ich während Betreuungen nicht immer unmittelbar reagieren kann, bitte ich um Verständnis, wenn eine Rückmeldung etwas Zeit in Anspruch nimmt. Ich melde mich, sobald es mir möglich ist.",
+  urgentTitle: "Wichtig bei dringenden Anliegen",
+  urgentIntro: "Bei akuten Beschwerden, Notfällen oder unklaren gesundheitlichen Situationen warten Sie bitte nicht auf meine Rückmeldung.",
+  urgentLead: "Wenden Sie sich in diesem Fall direkt an:",
+  urgentItems: ["bei einem medizinischen Notfall an 112", "das nächstgelegene Krankenhaus bzw. die zuständige Geburtsklinik", "Ihre Gynäkologin oder Ihren Gynäkologen", "bei Beschwerden Ihres Kindes Ihre Kinderärztin oder Ihren Kinderarzt"],
+  urgentClosing: "Wenn Sie unsicher sind oder sich etwas nicht richtig anfühlt, nehmen Sie Ihre Wahrnehmung ernst und lassen Sie die Situation medizinisch abklären.",
 } : {
   eyebrow: "Contact",
   title: "I look forward to hearing from you.",
@@ -90,12 +100,25 @@ export function ContactPage(){const{locale}=useLanguage();const copy = locale ==
   phone: "+49 173 4004408",
   email: siteConfig.email,
   button: "Send an email",
+  hoursTitle: "Consultation hours",
+  hours: "Monday to Friday, 8:30 a.m.–2:00 p.m.",
+  webLabel: "Website",
+  web: "www.hebamme-se.de",
+  availability: "You can contact me by telephone or email during consultation hours. As I am not always able to respond immediately while providing care, I appreciate your understanding if it takes me a little time to reply. I will get back to you as soon as I can.",
+  urgentTitle: "Important information for urgent concerns",
+  urgentIntro: "If you have acute symptoms, an emergency or an unclear health concern, please do not wait for my response.",
+  urgentLead: "In these situations, please contact:",
+  urgentItems: ["112 in a medical emergency", "the nearest hospital or the appropriate maternity hospital", "your gynaecologist", "your paediatrician if your child has symptoms"],
+  urgentClosing: "If you are unsure or feel that something is not right, trust your perception and seek medical advice.",
 };
 
 return <main><PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.text}/><section className="section contact"><div className="container"><div className="contact-card">
   <div className="contact-card-copy"><span className="eyebrow">{copy.emailLabel}</span><p className="quote"><a href={`mailto:${copy.email}`}>{copy.email}</a></p></div>
   <div className="contact-card-copy"><span className="eyebrow">{copy.phoneLabel}</span><p className="quote"><a href={`tel:${copy.phone.replace(/\s+/g, "")}`}>{copy.phone}</a></p></div>
   <div className="contact-card-actions"><a className="button" href={`mailto:${siteConfig.email}`}>{copy.button} →</a></div>
+</div><div className="contact-details">
+  <article className="contact-info"><span className="eyebrow">{copy.hoursTitle}</span><h2>{copy.hours}</h2><div className="contact-lines"><p>{copy.phoneLabel}: <a href={`tel:${copy.phone.replace(/\s+/g, "")}`}>{copy.phone}</a></p><p>{copy.emailLabel}: <a href={`mailto:${copy.email}`}>{copy.email}</a></p><p>{copy.webLabel}: <a href="https://www.hebamme-se.de">{copy.web}</a></p></div><p>{copy.availability}</p></article>
+  <article className="urgent-info"><span className="eyebrow">{copy.urgentTitle}</span><h2>{copy.urgentTitle}</h2><p>{copy.urgentIntro}</p><p>{copy.urgentLead}</p><ul>{copy.urgentItems.map(item=><li key={item}>{item}</li>)}</ul><p>{copy.urgentClosing}</p></article>
 </div></div></section></main>}
 
 export function LegalPage({type}:{type:"imprint"|"privacy"}){const{locale}=useLanguage();const isImprint=type==="imprint";const imprintCopy=imprintContent[locale];const privacyCopy=privacyContent[locale];
