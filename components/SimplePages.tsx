@@ -75,7 +75,7 @@ export function OnlinePage(){const{locale}=useLanguage();return <main><PageHero 
 export function ContactPage(){const{locale}=useLanguage();const copy = locale === "de" ? {
   eyebrow: "Kontakt",
   title: "Ich freue mich auf Ihre Anfrage.",
-  text: "Für Betreuungsanfragen und weitere Informationen kontaktieren Sie mich gerne per E-Mail oder telefonisch.",
+  text: "Für Betreuungsanfragen und weitere Informationen kontaktieren Sie mich gerne per E-Mail.",
   phoneLabel: "Telefon",
   emailLabel: "E-Mail",
   phone: "0173 4004408",
@@ -94,7 +94,7 @@ export function ContactPage(){const{locale}=useLanguage();const copy = locale ==
 } : {
   eyebrow: "Contact",
   title: "I look forward to hearing from you.",
-  text: "For care enquiries and further information, please contact me by email or telephone.",
+  text: "For care enquiries and further information, please contact me by email.",
   phoneLabel: "Phone",
   emailLabel: "Email",
   phone: "+49 173 4004408",

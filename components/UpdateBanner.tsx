@@ -18,6 +18,6 @@ export default function UpdateBanner({ announcement }: { announcement?: Announce
   return <aside className={`update-banner ${announcement.important ? "important" : ""}`}>
     <span className="update-banner-label">{locale === "de" ? "Aktuelles" : "Update"}</span>
     <span>{title}</span>
-    <Link href="/aktuelles">{locale === "de" ? "Mehr erfahren" : "Learn more"} →</Link>
+    <Link className="button learn-more-button" href="/aktuelles">{locale === "de" ? "Mehr erfahren" : "Learn more"} ↗</Link>
   </aside>;
 }
