@@ -1,4 +1,5 @@
 "use client";import Image from "next/image";import {useLanguage} from "./LanguageProvider";import PageHero from "./PageHero";import {siteConfig} from "@/lib/config";
+import ArrowIcon from "./ArrowIcon";
 
 const imprintContent = {
   de: {
@@ -70,7 +71,7 @@ const privacyContent = {
   },
 };
 
-export function OnlinePage(){const{locale}=useLanguage();return <main><PageHero eyebrow={locale==="de"?"Onlineangebote":"Online services"} title={locale==="de"?"Ergänzende Begleitung & Onlineangebote":"Additional support & online services"} text={locale==="de"?"Ein ergänzendes Angebot mit Fokus auf ganzheitliche, traumasensible und neurosystemische Begleitung.":"Additional services focused on holistic, trauma-sensitive and neuro-systemic support."}/><section className="section online"><div className="container split"><div><h2>{locale==="de"?"Begleitung, unabhängig vom Ort":"Support, wherever you are"}</h2><p>{locale==="de"?"Neben meiner Hebammentätigkeit entsteht ein ergänzendes Onlineangebot. Dieses Angebot ist unabhängig von den Leistungen der Hebammenversorgung und wird gesondert vergütet.":"Alongside my midwifery work, I am developing additional online services. These are separate from statutory midwifery care and are charged independently."}</p><a className="button" href={siteConfig.meloneGrooveUrl} target="_blank" rel="noreferrer">Melone Groove ↗</a></div><Image className="split-image" src="/images/detail2.jpeg" width={1600} height={1066} alt="Sei guter Hoffnung"/></div></section></main>}
+export function OnlinePage(){const{locale}=useLanguage();return <main><PageHero eyebrow={locale==="de"?"Onlineangebote":"Online services"} title={locale==="de"?"Ergänzende Begleitung & Onlineangebote":"Additional support & online services"} text={locale==="de"?"Ein ergänzendes Angebot mit Fokus auf ganzheitliche, traumasensible und neurosystemische Begleitung.":"Additional services focused on holistic, trauma-sensitive and neuro-systemic support."}/><section className="section online"><div className="container split"><div><h2>{locale==="de"?"Begleitung, unabhängig vom Ort":"Support, wherever you are"}</h2><p>{locale==="de"?"Neben meiner Hebammentätigkeit entsteht ein ergänzendes Onlineangebot. Dieses Angebot ist unabhängig von den Leistungen der Hebammenversorgung und wird gesondert vergütet.":"Alongside my midwifery work, I am developing additional online services. These are separate from statutory midwifery care and are charged independently."}</p><a className="button" href={siteConfig.meloneGrooveUrl} target="_blank" rel="noreferrer">Melone Groove <ArrowIcon /></a></div><Image className="split-image" src="/images/detail2.jpeg" width={1600} height={1066} alt="Sei guter Hoffnung"/></div></section></main>}
 
 export function ContactPage(){const{locale}=useLanguage();const copy = locale === "de" ? {
   eyebrow: "Kontakt",
@@ -115,7 +116,7 @@ export function ContactPage(){const{locale}=useLanguage();const copy = locale ==
 return <main><PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.text}/><section className="section contact"><div className="container"><div className="contact-card">
   <div className="contact-card-copy"><span className="eyebrow">{copy.emailLabel}</span><p className="quote"><a href={`mailto:${copy.email}`}>{copy.email}</a></p></div>
   <div className="contact-card-copy"><span className="eyebrow">{copy.phoneLabel}</span><p className="quote"><a href={`tel:${copy.phone.replace(/\s+/g, "")}`}>{copy.phone}</a></p></div>
-  <div className="contact-card-actions"><a className="button" href={`mailto:${siteConfig.email}`}>{copy.button} →</a></div>
+  <div className="contact-card-actions"><a className="button" href={`mailto:${siteConfig.email}`}>{copy.button} <ArrowIcon direction="right" /></a></div>
 </div><div className="contact-details">
   <article className="contact-info"><span className="eyebrow">{copy.hoursTitle}</span><h2>{copy.hours}</h2><div className="contact-lines"><p>{copy.phoneLabel}: <a href={`tel:${copy.phone.replace(/\s+/g, "")}`}>{copy.phone}</a></p><p>{copy.emailLabel}: <a href={`mailto:${copy.email}`}>{copy.email}</a></p><p>{copy.webLabel}: <a href="https://www.hebamme-se.de">{copy.web}</a></p></div><p>{copy.availability}</p></article>
   <article className="urgent-info"><span className="eyebrow">{copy.urgentTitle}</span><h2>{copy.urgentTitle}</h2><p>{copy.urgentIntro}</p><p>{copy.urgentLead}</p><ul>{copy.urgentItems.map(item=><li key={item}>{item}</li>)}</ul><p>{copy.urgentClosing}</p></article>

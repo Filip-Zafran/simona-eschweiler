@@ -1,4 +1,5 @@
 "use client";
+import ArrowIcon from "./ArrowIcon";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,6 +19,6 @@ export default function UpdateBanner({ announcement }: { announcement?: Announce
   return <aside className={`update-banner ${announcement.important ? "important" : ""}`}>
     <span className="update-banner-label">{locale === "de" ? "Aktuelles" : "Update"}</span>
     <span>{title}</span>
-    <Link className="button learn-more-button" href="/aktuelles">{locale === "de" ? "Mehr erfahren" : "Learn more"} ↗</Link>
+    <Link className="button learn-more-button" href="/aktuelles">{locale === "de" ? "Mehr erfahren" : "Learn more"} <ArrowIcon /></Link>
   </aside>;
 }
