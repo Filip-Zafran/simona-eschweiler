@@ -1,1 +1,7 @@
-import UpdatesPage from "@/components/UpdatesPage";import {getAnnouncements} from "@/lib/announcements";export const metadata={title:"Aktuelles"};export const dynamic="force-dynamic";export default async function Page(){return <UpdatesPage items={await getAnnouncements()}/>}
+import UpdatesPage from "@/components/UpdatesPage";
+
+export const metadata = { title: "Aktuelles" };
+
+export default function Page() {
+  return <UpdatesPage items={[]} />;
+}
